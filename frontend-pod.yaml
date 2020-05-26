@@ -20,4 +20,4 @@ spec:
     - name: REDIS_PWD
       value: ccp2
     - name: API_ENDPOINT_URL
-      value: http://localhost:8080
+      value: http://api-svc:8081
