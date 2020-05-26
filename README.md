@@ -95,14 +95,46 @@
 ### Subtask 3.1
 
 - Use only 1 instance for the Redis-Server. Why?
-  - While using a redis cluster, it is important that we map the Pods to only 1 port on the same server.
-- Other observations
+  
+  - Redis is a master-slave architecture. The main Redis cache can set up muéltiple slaves to hold the data and act according to what the main instance would do. Since it seems we don't use a lot of data, we only have one instance of Redis server.
+  
+- Other observations/difficulties
+
+  - The Kubernetes official documentation helped us a lot so we didn't encounter any difficulties
+
+  - The Replica were all given IDs and they were created successfully
+
+    kubectl get all
+
+    ![](.\img\t3_1_get_all.jpg)
 
 ### Subtask 3.2
 
 - What happens if you delete a Frontend or API Pod? How long does it take for the system to react?
 
+  - It deletes successfully and another replaces it immediatly. It took 30 seconds to launch the new one.
+
+  - Command was ```kubectl delete pod frontend-deployment-7b47d9b4f7-bwxmd```
+
+    ![](.\img\t3_2_before_delete.jpg)
+
+    Before the delete
+
+    ![](.\img\t3_2_recreating_pod.jpg)
+
+    While the Pod is recreating
+
+    ![](.\img\t3_2_delete_pod_frontend.jpg)
+
+    Running pods after the delete and recreation of the new Pod is complete
+
+    
+
 - What happens when you delete the Redis Pod?
+
+  - It does the same as before but the creation of the new Redis Pod is much more faster. While after 30 seconds the pod was still being launch before, here after 14 seconds the new Redis Pod is already running
+
+    ![](C:\Users\batac\Documents\heig\semestre_6\CLD\CLD_Kubernetes\img\t3_2_redis_pod.jpg)
 
 - How can you change the number of instances temporarily to 3? Hint: look for scaling in the deployment documentation
 
@@ -116,10 +148,14 @@
 
 - How can you update a component? (see "Updating a Deployment" in the deployment documentation)
 
-  
+  - We can update what image a Deployment is using: ```kubectl --record deployment.apps/nginx-deployment set image deployment.v1.apps/nginx-deployment nginx=nginx:1.16.1```
+    - Here we told the nginx Pod to use image 1.16.1 instead of the image it was using
+  - We can also edit the Deployment and change the image manually by typing ```kubectl edit deployment.v1.apps/nginx-deployment```
 
 ### Other Deliverables
 
 - Document any difficulties you faced and how you overcame them.
+  - No particular difficulties
 - Copy the object descriptions into the lab report.
   - Every other Pod/Service are the same as they were previously on Task 2
+  - Otherwise the objects descriptions are in the report under Task 3.2
