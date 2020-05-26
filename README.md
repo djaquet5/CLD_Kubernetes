@@ -1,4 +1,4 @@
-# CLD_Kubernetes
+# CLD - Lab 06 : Kubernetes
 
 ## Task 1 - Deliverables
 
@@ -10,31 +10,43 @@
 
   - Description of the Pods:
 
-    - pod-api
+    - The screenshots below are the description of the Pod API. We make 3 screenshots to have bigger screenshots. This seperation has been done because we cannot edit the size of the image in a markdown document.
 
-      ![](.\img\t1_pod_api.jpg)
+      ![Pod API #1](.\img\t1_pod_api_p1.jpg)
 
-    - pod-redis
+      ![Pod API #2](.\img\t1_pod_api_p2.jpg)
 
-      ![](.\img\t1_pod_redis.jpg)
+      ![Pod API #3](.\img\t1_pod_api_p3.jpg)
 
-    - pod-frontend
+    - The screenshots below are the description of the Pod Redis.
 
-      ![](.\img\t1_pod_frontend.jpg)
+      ![Pod Redis #1](.\img\t1_pod_redis_p1.jpg)
+
+      ![Pod Redis #2](.\img\t1_pod_redis_p2.jpg)
+
+      ![Pod Redis #3](.\img\t1_pod_redis_p3.jpg)
+
+    - The screenshots below are the description of the Pod Frontend.
+
+      ![Pod Frontend #1](.\img\t1_pod_frontend_p1.jpg)
+    
+      ![Pod Frontend #2](.\img\t1_pod_frontend_p2.jpg)
+
+      ![Pod Frontend #3](.\img\t1_pod_frontend_p3.jpg)
 
   - Description of the Services:
-
-    -  service-api
-
-      ![](.\img\t1_svc_api.jpg)
-
-    - service-redis
-
-      ![](.\img\t1_svc_redis.jpg)
-
-    - service-kubernetes
-
-      ![](.\img\t1_svc_kubernetes.jpg)
+  
+    -  The screenshot below is the description of the service API.
+  
+      ![Service API](.\img\t1_svc_api.jpg)
+  
+    - The screenshot below is the description of the service Redis.
+  
+      ![Service Redis](.\img\t1_svc_redis.jpg)
+  
+    - The screenshot below is the description of the service Kubernetes.
+  
+      ![Service Kubernetes](.\img\t1_svc_kubernetes.jpg)
 
 ## Task 2 - Deliverables
 
@@ -46,37 +58,35 @@
 
 - Copy the object descriptions into the lab report (if they are unchanged from the previous task just say so). 
 
-  - All other services/Pods are unchanged
+  - Only the Pod Frontend has been modified. All other services/Pods are unchanged. The screenshots below show the new description of the Pod Frontend.
 
-  - New Pods Descriptions:
+    ![New Pod Frontend #1](.\img\t2_pod_frontend_p1.jpg)
 
-    - Pod Frontend
+    ![New Pod Frontend #2](.\img\t2_pod_frontend_p2.jpg)
 
-      ![](.\img\t2_pod_frontend.jpg)
+    ![New Pod Frontend #3](.\img\t2_pod_frontend_p3.jpg)
 
-      
-
-      
-
-  - New Services Descriptions:
-
-    - Service Frontend
-
-      ![](.\img\t2_svc_frontend.jpg)
-
+    
+  
+  - Description of the service Frontend. This service has been created during this task:
+  
+    ![Service Frontend](.\img\t2_svc_frontend.jpg)
+  
 - Take a screenshot of the cluster details from the GKE console.
 
-  ![](.\img\t2_cluster_a.jpg)
+  - The screenshots below show the details from the GKE console. It is important to notice that the screenshots have been taken after we have done the task 3.
 
-  ![](.\img\t2_cluster_b.jpg)
+    ![Cluster A](.\img\t2_cluster_a.jpg)
 
-  ![](.\img\t2_cluster_c.jpg)
+    ![Cluster B](.\img\t2_cluster_b.jpg)
+
+    ![Cluster C](.\img\t2_cluster_c.jpg)
 
 - Copy the output of the `kubectl describe` command to describe your load balancer once completely initialized.
 
-  - It's located in the svc-frontend
+  - It's located in the `svc-frontend`
 
-    ![](.\img\t2_svc_frontend.jpg)
+    ![Service Frontend](.\img\t2_svc_frontend.jpg)
 
 ## Task 3 - Deliverables
 
@@ -94,7 +104,7 @@
 
     kubectl get all
 
-    ![](.\img\t3_1_get_all.jpg)
+    ![Get All infos](.\img\t3_1_get_all.jpg)
 
 ### Subtask 3.2
 
@@ -104,15 +114,15 @@
 
   - Command was ```kubectl delete pod frontend-deployment-7b47d9b4f7-bwxmd```
 
-    ![](.\img\t3_2_before_delete.jpg)
+    ![Before delete](.\img\t3_2_before_delete.jpg)
 
     Before the delete
 
-    ![](.\img\t3_2_recreating_pod.jpg)
+    ![Recreating Pod](.\img\t3_2_recreating_pod.jpg)
 
     While the Pod is recreating
 
-    ![](.\img\t3_2_delete_pod_frontend.jpg)
+    ![Delete Pod Frontend](.\img\t3_2_delete_pod_frontend.jpg)
 
     Running pods after the delete and recreation of the new Pod is complete
 
@@ -122,7 +132,7 @@
 
   - It does the same as before but the creation of the new Redis Pod is much more faster. While after 30 seconds the pod was still being launch before, here after 14 seconds the new Redis Pod is already running
 
-    ![](C:\Users\batac\Documents\heig\semestre_6\CLD\CLD_Kubernetes\img\t3_2_redis_pod.jpg)
+    ![Result after Redis Pod killed](./img/t3_2_redis_pod.jpg)
 
 - How can you change the number of instances temporarily to 3? Hint: look for scaling in the deployment documentation
 
