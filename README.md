@@ -44,37 +44,25 @@
   - The second problem was connecting the pod to the service when creating it. It said the cluster had not enough nodes. We had to modify the default pool in the cluster details at the bottom of the page.
   - We couldn't connect to the frontend service so we had to increase the number of nodes again. We used the clusterIP instead of the load-balancer so this was also something wrong we did
 
--  Copy the object descriptions into the lab report (if they are unchanged from the previous task just say so).
+- Copy the object descriptions into the lab report (if they are unchanged from the previous task just say so). 
 
-  - Pods Descriptions:
+  - All other services/Pods are unchanged
 
-    - frontend pod
+  - New Pods Descriptions:
+
+    - Pod Frontend
 
       ![](.\img\t2_pod_frontend.jpg)
 
-    - api pod
-
-      ![](.\img\t2_pod_api.jpg)
-
-    - Pod Redis
-
-      ![](.\img\t2_pod_redis.jpg)
+      
 
       
 
-  - Services Descriptions:
+  - New Services Descriptions:
 
-    - Service Kubernetes
+    - Service Frontend
 
-      ![](.\img\t2_svc_kubernetes.jpg)
-
-    - Service Api
-
-      ![](.\img\t2_svc_api.jpg)
-
-    - Service Redis
-
-      ![](.\img\t2_svc_redis.jpg)
+      ![](.\img\t2_svc_frontend.jpg)
 
 - Take a screenshot of the cluster details from the GKE console.
 
